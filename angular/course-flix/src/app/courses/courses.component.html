@@ -1,0 +1,18 @@
+ <div class="row">
+     <input type="text" [(ngModel)]="courseName">
+ </div>
+ <div class="row">
+     {{courseName | uppercase}}
+ </div>
+
+ <div class="row mt-10">
+    <ng-container *ngIf="courses && courses.length > 0 ; else display">
+        <div class="col-md-6"  *ngFor="let course of courses | filterCourse:courseName">
+          <app-course [data]="course" (full) = "closeRegistration($event)"></app-course>
+        </div>
+    </ng-container>
+    <ng-template #display>
+        <h2>There are no courses to display</h2> 
+        <a (click)="registerNewCourse()" class="btn btn-success">Register a New Course</a>   
+    </ng-template>
+  </div>

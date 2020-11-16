@@ -1,0 +1,10 @@
+div {
+    height: 250px;
+    background-color: #ccc;
+    color: black;
+}
+div > ul > li {
+    padding: 20px;
+    list-style: none;
+    line-height: 10px;
+}

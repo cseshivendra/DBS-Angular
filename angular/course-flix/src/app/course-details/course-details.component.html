@@ -1,0 +1,11 @@
+<div class="card" class="col-md-8">
+    <img [src]='courseDetails.imgPath' alt="{{courseDetails.name}}"/>
+    <div class="card-body">
+      <h5 class="card-title"> Name: {{courseDetails.name | uppercase }}</h5>
+      <p class="card-text"> Price: {{courseDetails.price | currency:'INR':true}}</p>
+      <p class="card-text">Duration : {{courseDetails.duration}}</p>
+      <p class="card-text">Start Date : {{courseDetails.start_date | date:'dd-MMM-yy'}}</p>
+      <p class="card-text">#Students: {{courseDetails.students | number}}</p>
+      <p class="card-text">Rating: <app-rating [rating]="courseDetails.rating" ></app-rating>
+      </p>
+  </div>

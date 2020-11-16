@@ -1,0 +1,15 @@
+<div class="card" class="col-md-8">
+  <img [src]='course.imgPath' alt="{{course?.name}}"/>
+  <div class="card-body">
+    <h5 class="card-title"> Name: {{course?.name | uppercase }}</h5>
+    <p class="card-text"> Price: {{course?.price | currency:'AUD':true}}</p>
+    <p class="card-text">Duration : {{course?.duration}}</p>
+    <p class="card-text">Start Date : {{course?.start_date | date:'dd-MMM-yy'}}</p>
+    <p class="card-text">#Students: {{course?.students | number}}</p>
+    <p class="card-text">Rating: <app-rating [rating]="course?.rating" ></app-rating>
+    </p>
+    <button class="btn btn-success" (click)="fetchCourseDetails(course)">Details</button>
+    &nbsp; &nbsp;
+    <button [disabled]="course.students >= 20" class="btn btn-success" (click)="enroll(course.name)">Enroll</button>
+  </div>
+</div>

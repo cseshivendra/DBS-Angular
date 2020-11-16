@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <div class="row">
+        <div class="wrapper">
+            <ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+                <li>fou5</li>
+                <li>five</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    /*const span = document.createElement("span");
+    span.textContent = "SOme text";
+    document.querySelector("#root").appendChild(span);
+    */
+    const templateStr = `<span>Some random text ${45 * 45} <span>`;
+    document.querySelector("#root").innerHTML = templateStr;
+
+</script>
+
+</html>

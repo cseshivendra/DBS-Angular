@@ -1,0 +1,32 @@
+<form  #courseForm="ngForm"
+        (ngSubmit) = "submitCourse(courseForm)" 
+        class="mt-8 col-md-8">
+    <div class="form-group">
+      <label for="coursename">Course Name</label>
+      <input type="text" 
+             class="form-control" 
+             id="coursename" 
+             name="coursename" 
+             required
+             minlength="8"
+             (change)="log(coursename)"
+             #coursename="ngModel"
+             ngModel>
+    </div>
+    <div class="alert alert-danger" *ngIf="coursename.touched && coursename.invalid">
+        <span *ngIf="coursename.errors.required">The coursename field cannot be empty</span>
+        <span *ngIf="coursename.errors.minlength">The coursename field should be of {{coursename.errors.minlength.requiredLength - coursename.errors.minlength.actualLength }} </span>
+    </div>
+    <div class="form-group">
+      <label for="courseprice">Course Price</label>
+      <input type="text" class="form-control" id="courseprice" required>
+    </div>
+    <div class="form-group">
+      <label for="duration">Course Duration</label>
+      <input type="text" class="form-control" id="duration" required>
+    </div>
+    <button 
+            type="submit" 
+            [disabled]="courseForm.invalid"
+            class="btn btn-primary">Submit</button>
+  </form>
